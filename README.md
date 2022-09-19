@@ -32,12 +32,12 @@ This repo used in Dockerhub url 'https://hub.docker.com/r/porchn/php5.6-apache/'
 
 ## How to use with Docker
 ```
-docker run --name testphp -p 8080:80 -d -v $(pwd):/var/www/html porchn/php5.6-apache
+docker run --name test -p 8080:80 -d -v $(pwd):/var/www/html guenterbailey/php5-apache
 ```
 ## Use with Docker-compose 
 ```
   apache:
-    image: porchn/php5.6-apache
+    image: guenterbailey/php5-apache
     container_name: apache
     ports:
       - "80:80"
@@ -46,6 +46,6 @@ docker run --name testphp -p 8080:80 -d -v $(pwd):/var/www/html porchn/php5.6-ap
       - ./apache2/www:/var/www
       - ./apache2/logs:/var/log/apache2
     environment:
-      - TZ=Asia/Bangkok
+      - TZ=Europe/Vienna
     restart: always
 ```

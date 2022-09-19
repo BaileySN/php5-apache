@@ -1,7 +1,7 @@
 FROM php:5.6-apache
-#MAINTAINER porchn <pichai.chin@gmail.com>
+#MAINTAINER Bailey <guenter.bailey@bailey-solution.com>
 
-ENV TZ=Asia/Bangkok
+ENV TZ=Europe/Vienna
 # Set Server timezone.
 RUN echo $TZ > /etc/timezone \
     && dpkg-reconfigure -f noninteractive tzdata \
