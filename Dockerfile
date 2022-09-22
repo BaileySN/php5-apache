@@ -30,12 +30,16 @@ RUN apt-get -y update \
     libkrb5-dev \
     libmcrypt-dev \
     unixodbc-dev \
+    libfreetype6-dev \ 
+    libjpeg62-turbo-dev \
+    libgd-dev \
+    libpng-dev \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/*
 
 
 # Config Extension 
-RUN docker-php-ext-configure gd --with-jpeg-dir=/usr/lib \
+RUN docker-php-ext-configure gd --with-jpeg-dir=/usr/lib --with-freetype-dir=/usr/lib \
     && docker-php-ext-configure imap --with-imap-ssl --with-kerberos \
     && docker-php-ext-configure pdo_odbc --with-pdo-odbc=unixODBC,/usr
 
